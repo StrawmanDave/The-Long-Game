@@ -16,6 +16,7 @@ if(File.Exists($"{username}.txt"))
        score = Convert.ToInt32(oldScore);
     }
 }
+
 // Now how to make a score and add 1 to it for every keypressed
 Console.Write("Start masshing buttons on the keyboard!");
 while(true)
@@ -33,8 +34,8 @@ while(true)
     
 };
 
+//needs to convert the score to a string to write it to a file.
 string saveScore = $"{Convert.ToString(score)}";
-
 
 // How to save score the file username?
 File.WriteAllText($"{username}.txt", saveScore);
