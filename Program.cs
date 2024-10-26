@@ -8,12 +8,14 @@ Console.Write($"Please enter your name ");
 string username = Console.ReadLine();
 
 //Now how to check if the users file already exists access it and keep adding scores
-if(username == Path.GetFileNameWithoutExtension($"/home/david/david-programming-1400/The-Long-Game/{username}"))
+if(File.Exists($"{username}.txt"))
 {
-   string oldScore = File.ReadAllText($"{username}.txt");
-   score = Convert.ToInt32(oldScore);
+    if(username == Path.GetFileNameWithoutExtension($"/home/david/david-programming-1400/The-Long-Game/{username}"))
+    {
+       string oldScore = File.ReadAllText($"{username}.txt");
+       score = Convert.ToInt32(oldScore);
+    }
 }
-
 // Now how to make a score and add 1 to it for every keypressed
 Console.Write("Start masshing buttons on the keyboard!");
 while(true)
